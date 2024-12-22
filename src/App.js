@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/" element={<BookListPage />} /> {/* แก้ไขบรรทัดนี้ */}
+        <Route index element={<BookListPage />} />
         <Route
           path="/add"
           element={
