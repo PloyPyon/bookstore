@@ -6,33 +6,32 @@ import BookListPage from './components/BookListPage';
 import AddBookPage from './components/AddBookPage';
 import EditBookPage from './components/EditBookPage';
 
+
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="login" element={<LoginPage />} />
-          <Route index element={<BookListPage />} />
-          <Route 
-            path="add" 
-            element={
-              <ProtectedRoute>
-                <AddBookPage /> 
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="edit/:id" 
-            element={
-              <ProtectedRoute>
-                <EditBookPage /> 
-              </ProtectedRoute>
-            } 
-          />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<BookListPage />} /> {/* แก้ไขบรรทัดนี้ */}
+        <Route
+          path="/add"
+          element={
+            <ProtectedRoute>
+              <AddBookPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/edit/:id"
+          element={
+            <ProtectedRoute>
+              <EditBookPage />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
