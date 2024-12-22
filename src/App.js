@@ -8,9 +8,10 @@ import EditBookPage from './components/EditBookPage';
 
 function App() {
   return (
-    <BrowserRouter>
+    // เพิ่ม basename="/bookstore"
+    <BrowserRouter basename="/bookstore">
       <Routes>
-        <Route path="/" element={<Layout />}> 
+        <Route path="/" element={<Layout />}>
           <Route path="login" element={<LoginPage />} />
           <Route index element={<BookListPage />} />
           <Route
@@ -30,6 +31,8 @@ function App() {
             }
           />
         </Route>
+        {/* กำหนด route สำรอง */}
+        <Route path="*" element={<h1>Page Not Found</h1>} />
       </Routes>
     </BrowserRouter>
   );
