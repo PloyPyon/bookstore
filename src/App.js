@@ -11,24 +11,26 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route index element={<BookListPage />} />
-        <Route
-          path="/add"
-          element={
-            <ProtectedRoute>
-              <AddBookPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/edit/:id"
-          element={
-            <ProtectedRoute>
-              <EditBookPage />
-            </ProtectedRoute>
-          }
-        />
+        <Route element={<Layout />}>
+          <Route path="/login" element={<LoginPage />} />
+          <Route index element={<BookListPage />} /> 
+          <Route
+            path="/add"
+            element={
+              <ProtectedRoute>
+                <AddBookPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/edit/:id"
+            element={
+              <ProtectedRoute>
+                <EditBookPage />
+              </ProtectedRoute>
+            }
+          />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
