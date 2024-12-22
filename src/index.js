@@ -1,16 +1,15 @@
+// src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './App'; // import App component
 import reportWebVitals from './reportWebVitals';
-
-// Import AuthProvider
-import { AuthProvider } from './contexts/AuthContext'; 
+import { AuthProvider } from './contexts/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AuthProvider> 
+    <AuthProvider>
       <App />
     </AuthProvider>
   </React.StrictMode>
